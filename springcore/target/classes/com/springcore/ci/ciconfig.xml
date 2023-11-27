@@ -6,6 +6,12 @@
  xsi:schemaLocation="http://www.springframework.org/schema/beans
  http://www.springframework.org/schema/beans/spring-beans.xsd">
  
+ <!-- Object Creation -->
+ <bean class="com.springcore.ci.Certificate" name="cer">
+      <constructor-arg>
+        <value>Android</value>
+    </constructor-arg>
+ </bean>
  <bean class="com.springcore.ci.Person" name="person">
     <constructor-arg>
         <value>Habiba</value>
@@ -13,6 +19,13 @@
     <constructor-arg type="int">
         <value>1234</value>
     </constructor-arg>
+    <constructor-arg ref="cer" />
+    <constructor-arg name="list">
+      <list>
+         <value>A</value>
+         <value>B</value>
+         <value>C</value>
+      </list>
+    </constructor-arg>
  </bean>
- 
 </beans>
